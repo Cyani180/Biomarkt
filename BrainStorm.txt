@@ -1,0 +1,10 @@
+A Products
+- Name -> string
+- Brand -> string 
+- Category -> string
+- Price -> float
+
+- Create new Porducts
+- Delete products
+- Edit products
+- Clear text fields
