@@ -63,9 +63,9 @@ namespace Biomarkt_GmbH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wp7713378_minecraft_cat_wallpapers {
+        internal static System.Drawing.Bitmap MinecraftBee {
             get {
-                object obj = ResourceManager.GetObject("wp7713378-minecraft-cat-wallpapers", resourceCulture);
+                object obj = ResourceManager.GetObject("MinecraftBee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace Biomarkt_GmbH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wp7713378_minecraft_cat_wallpapers1 {
+        internal static System.Drawing.Bitmap MinecraftCat {
             get {
-                object obj = ResourceManager.GetObject("wp7713378-minecraft-cat-wallpapers1", resourceCulture);
+                object obj = ResourceManager.GetObject("MinecraftCat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MinecraftPanda {
+            get {
+                object obj = ResourceManager.GetObject("MinecraftPanda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

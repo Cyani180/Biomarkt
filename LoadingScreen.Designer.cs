@@ -68,7 +68,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.wp7713378_minecraft_cat_wallpapers1;
+            pictureBox1.Image = Properties.Resources.MinecraftCat;
             pictureBox1.Location = new Point(14, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(659, 369);
@@ -109,9 +109,6 @@
         private ProgressBar loadingProgressbar;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer loadingbarTimer;
-
-
-
 
     }
 
