@@ -3,18 +3,33 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
 
 namespace Biomarkt_GmbH
 {
     public partial class ProductsScreen : Form
     {
+        private SqlConnection databaseConnection = new SqlConnection(@"Data Source=DESKTOP-S85UG84\SQLEXPRESS;
+        Initial Catalog=Biomarkt_DB;
+        Integrated Security=True;
+        TrustServerCertificate=True;  
+        Connect Timeout=5");
+
         public ProductsScreen()
         {
+            
             InitializeComponent();
+
+            // start
+            databaseConnection.Open();
+            databaseConnection.Close();
+
         }
 
 
