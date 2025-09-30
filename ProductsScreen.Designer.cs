@@ -41,8 +41,8 @@
             btnProductEdit = new Button();
             btnProductDelete = new Button();
             btnProductClear = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            productsDGV = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)productsDGV).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -137,7 +137,7 @@
             // btnProductSave
             // 
             btnProductSave.BackColor = Color.FromArgb(109, 216, 214);
-            btnProductSave.Location = new Point(24, 402);
+            btnProductSave.Location = new Point(19, 426);
             btnProductSave.Name = "btnProductSave";
             btnProductSave.Size = new Size(75, 23);
             btnProductSave.TabIndex = 9;
@@ -148,7 +148,7 @@
             // btnProductEdit
             // 
             btnProductEdit.BackColor = Color.FromArgb(109, 216, 214);
-            btnProductEdit.Location = new Point(141, 402);
+            btnProductEdit.Location = new Point(125, 426);
             btnProductEdit.Name = "btnProductEdit";
             btnProductEdit.Size = new Size(75, 23);
             btnProductEdit.TabIndex = 10;
@@ -159,7 +159,7 @@
             // btnProductDelete
             // 
             btnProductDelete.BackColor = Color.FromArgb(109, 216, 214);
-            btnProductDelete.Location = new Point(257, 402);
+            btnProductDelete.Location = new Point(232, 426);
             btnProductDelete.Name = "btnProductDelete";
             btnProductDelete.Size = new Size(75, 23);
             btnProductDelete.TabIndex = 11;
@@ -170,7 +170,7 @@
             // btnProductClear
             // 
             btnProductClear.BackColor = Color.FromArgb(109, 216, 214);
-            btnProductClear.Location = new Point(369, 402);
+            btnProductClear.Location = new Point(340, 426);
             btnProductClear.Name = "btnProductClear";
             btnProductClear.Size = new Size(75, 23);
             btnProductClear.TabIndex = 12;
@@ -178,14 +178,24 @@
             btnProductClear.UseVisualStyleBackColor = false;
             btnProductClear.Click += BtnProductClear_Click;
             // 
-            // dataGridView1
+            // productsDGV
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(109, 216, 214);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(287, 29);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(484, 332);
-            dataGridView1.TabIndex = 13;
+            productsDGV.AllowUserToAddRows = false;
+            productsDGV.AllowUserToDeleteRows = false;
+            productsDGV.AllowUserToResizeColumns = false;
+            productsDGV.AllowUserToResizeRows = false;
+            productsDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            productsDGV.BackgroundColor = Color.FromArgb(109, 216, 214);
+            productsDGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            productsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productsDGV.Location = new Point(287, 29);
+            productsDGV.Name = "productsDGV";
+            productsDGV.RowHeadersVisible = false;
+            productsDGV.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(216, 173, 61);
+            productsDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 201, 125);
+            productsDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+            productsDGV.Size = new Size(484, 332);
+            productsDGV.TabIndex = 13;
             // 
             // ProductsScreen
             // 
@@ -193,7 +203,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(804, 461);
-            Controls.Add(dataGridView1);
+            Controls.Add(productsDGV);
             Controls.Add(btnProductClear);
             Controls.Add(btnProductDelete);
             Controls.Add(btnProductEdit);
@@ -211,7 +221,7 @@
             Name = "ProductsScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Products";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productsDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,6 +240,6 @@
         private Button btnProductEdit;
         private Button btnProductDelete;
         private Button btnProductClear;
-        private DataGridView dataGridView1;
+        private DataGridView productsDGV;
     }
 }

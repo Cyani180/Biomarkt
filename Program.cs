@@ -12,7 +12,8 @@ namespace Biomarkt_GmbH
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new LoadingScreen());
-            Application.Run(new MainMenuScreen());
+            //Application.Run(new MainMenuScreen());
+            Application.Run(new ProductsScreen());
         }
     }
 }
