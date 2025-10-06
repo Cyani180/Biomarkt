@@ -9,3 +9,16 @@ A Products
 - Edit products
 - Clear text fields
 
+A Invoice
+
+- CustomerName -> string
+- InvoiceDate -> date
+- TotalInvoice -> decimal
+
+- Create new invoice
+- Delete invoice
+- Edit invoice
+- Clear text fields
+
+
+

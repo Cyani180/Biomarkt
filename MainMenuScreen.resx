@@ -121,7 +121,7 @@
   <data name="btnProducts.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXEAAAC2CAYAAAAvHb0cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAA/5RJREFUeF7c/QV0FWe7+H9j
+        wAAADsABataJCQAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAA/5RJREFUeF7c/QV0FWe7+H9j
         xUlCnCgaxQIJ7u6uLVCKW0uR0uLSFnd3LS0eJLgGd7dgCQmBkAR3/b7rntl7Z/bM7J0EeH7nv17W+q4d
         0vC0zzlnfXqda+6ZSdNtRxzdFfXY8SDl7Ux9Pb9hvay1K/l+VrfbvF8U9bbafalfje3R9sue+/TcHcvQ
         Q3GsjXhKePRLtt9+zrxzj1h88TEX49+w6cYzBh54QJ899+m3NwXtS6r/vvv8tv8+A/bHavrdUgeS+iOZ
@@ -1645,10 +1645,10 @@
         rkJggg==
 </value>
   </data>
-  <data name="btnBill.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnInvoice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXIAAAC5CAYAAAA1fLTKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAA/5RJREFUeF60/QeUHOWZvg/X
+        wAAADsABataJCQAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAA/5RJREFUeF60/QeUHOWZvg/X
         KIKkyTnnnGc6zfR07p7unpxzzjlplFAWKCAJ5ZxzIicTDNiAjXMO2AaDsY3D2mtYMGC8u7/7O89bVd3V
         PSMhe/+fz7lOVfcEaVeca+653+d9i3v7F6/iL3/4AfRFGvh5haDMVoJSixXJsWnIy5QjL1OG4KAQhIWE
         Y/kKT+SmZaLJVg6TvBBmZRFMqiKY6DovahgJhRomBX+9HYb5kPOYlBooM/Pg5ekLb09f+Hj7wdfbH74+

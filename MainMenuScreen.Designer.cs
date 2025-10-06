@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuScreen));
             btnProducts = new Button();
-            btnBill = new Button();
+            btnInvoice = new Button();
             SuspendLayout();
             // 
             // btnProducts
@@ -48,19 +48,20 @@
             btnProducts.UseVisualStyleBackColor = true;
             btnProducts.Click += BtnProducts_Click;
             // 
-            // btnBill
+            // btnInvoice
             // 
-            btnBill.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBill.ForeColor = Color.DarkOrange;
-            btnBill.Image = (Image)resources.GetObject("btnBill.Image");
-            btnBill.ImageAlign = ContentAlignment.TopCenter;
-            btnBill.Location = new Point(428, 30);
-            btnBill.Name = "btnBill";
-            btnBill.Size = new Size(365, 178);
-            btnBill.TabIndex = 1;
-            btnBill.Text = "Create Invoice";
-            btnBill.TextAlign = ContentAlignment.TopLeft;
-            btnBill.UseVisualStyleBackColor = true;
+            btnInvoice.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInvoice.ForeColor = Color.DarkOrange;
+            btnInvoice.Image = (Image)resources.GetObject("btnInvoice.Image");
+            btnInvoice.ImageAlign = ContentAlignment.TopCenter;
+            btnInvoice.Location = new Point(428, 30);
+            btnInvoice.Name = "btnInvoice";
+            btnInvoice.Size = new Size(365, 178);
+            btnInvoice.TabIndex = 1;
+            btnInvoice.Text = "Create Invoice";
+            btnInvoice.TextAlign = ContentAlignment.TopLeft;
+            btnInvoice.UseVisualStyleBackColor = true;
+            btnInvoice.Click += BtnInvoice_Click;
             // 
             // MainMenuScreen
             // 
@@ -68,7 +69,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(90, 194, 166);
             ClientSize = new Size(826, 261);
-            Controls.Add(btnBill);
+            Controls.Add(btnInvoice);
             Controls.Add(btnProducts);
             Name = "MainMenuScreen";
             Padding = new Padding(0, 0, 30, 0);
@@ -80,6 +81,6 @@
         #endregion
 
         private Button btnProducts;
-        private Button btnBill;
+        private Button btnInvoice;
     }
 }

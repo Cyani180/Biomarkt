@@ -41,8 +41,8 @@
             btnProductEdit = new Button();
             btnProductDelete = new Button();
             btnProductClear = new Button();
-            productsDGV = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)productsDGV).BeginInit();
+            productsC = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)productsC).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -108,7 +108,7 @@
             txtProductPrice.BorderStyle = BorderStyle.FixedSingle;
             txtProductPrice.Location = new Point(105, 326);
             txtProductPrice.Name = "txtProductPrice";
-            txtProductPrice.Size = new Size(95, 23);
+            txtProductPrice.Size = new Size(144, 23);
             txtProductPrice.TabIndex = 7;
             // 
             // label4
@@ -131,7 +131,7 @@
             comboBoxProductCategory.Items.AddRange(new object[] { "Fruit", "Vegetables", "Meat", "Fish", "Drugstore", "Beverages" });
             comboBoxProductCategory.Location = new Point(105, 273);
             comboBoxProductCategory.Name = "comboBoxProductCategory";
-            comboBoxProductCategory.Size = new Size(95, 23);
+            comboBoxProductCategory.Size = new Size(144, 23);
             comboBoxProductCategory.TabIndex = 8;
             // 
             // btnProductSave
@@ -178,24 +178,28 @@
             btnProductClear.UseVisualStyleBackColor = false;
             btnProductClear.Click += BtnProductClear_Click;
             // 
-            // productsDGV
+            // productsC
             // 
-            productsDGV.AllowUserToAddRows = false;
-            productsDGV.AllowUserToDeleteRows = false;
-            productsDGV.AllowUserToResizeColumns = false;
-            productsDGV.AllowUserToResizeRows = false;
-            productsDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            productsDGV.BackgroundColor = Color.FromArgb(109, 216, 214);
-            productsDGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            productsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productsDGV.Location = new Point(287, 29);
-            productsDGV.Name = "productsDGV";
-            productsDGV.RowHeadersVisible = false;
-            productsDGV.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(216, 173, 61);
-            productsDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 201, 125);
-            productsDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
-            productsDGV.Size = new Size(484, 332);
-            productsDGV.TabIndex = 13;
+            productsC.AllowUserToAddRows = false;
+            productsC.AllowUserToDeleteRows = false;
+            productsC.AllowUserToResizeColumns = false;
+            productsC.AllowUserToResizeRows = false;
+            productsC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            productsC.BackgroundColor = Color.FromArgb(109, 216, 214);
+            productsC.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            productsC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productsC.Location = new Point(287, 29);
+            productsC.MultiSelect = false;
+            productsC.Name = "productsC";
+            productsC.ReadOnly = true;
+            productsC.RowHeadersVisible = false;
+            productsC.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(216, 173, 61);
+            productsC.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 201, 125);
+            productsC.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+            productsC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            productsC.Size = new Size(484, 332);
+            productsC.TabIndex = 13;
+            productsC.CellContentClick += ProductsDGV_CellContentClick;
             // 
             // ProductsScreen
             // 
@@ -203,7 +207,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(804, 461);
-            Controls.Add(productsDGV);
+            Controls.Add(productsC);
             Controls.Add(btnProductClear);
             Controls.Add(btnProductDelete);
             Controls.Add(btnProductEdit);
@@ -221,7 +225,7 @@
             Name = "ProductsScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Products";
-            ((System.ComponentModel.ISupportInitialize)productsDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productsC).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,6 +244,6 @@
         private Button btnProductEdit;
         private Button btnProductDelete;
         private Button btnProductClear;
-        private DataGridView productsDGV;
+        private DataGridView productsC;
     }
 }

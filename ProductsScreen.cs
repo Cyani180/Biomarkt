@@ -21,9 +21,11 @@ namespace Biomarkt_GmbH
         TrustServerCertificate=True;  
         Connect Timeout=5");
 
+        private int lastSelectedProductKey;
+
         public ProductsScreen()
         {
-            
+
             InitializeComponent();
             //LoadProducts();  
             ShowProducts();
@@ -60,16 +62,14 @@ namespace Biomarkt_GmbH
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
 
-            productsDGV.DataSource = dataSet.Tables[0];
-
-            productsDGV.Columns[0].Visible = false;
-
+            productsC.DataSource = dataSet.Tables[0];
+            productsC.Columns[0].Visible = false;
             databaseConnection.Close();
         }
 
         private void BtnProductSave_Click(object sender, EventArgs e)
         {
-            if(txtProductName.Text == "" 
+            if (txtProductName.Text == ""
                 || txtProductBrand.Text == ""
                 || comboBoxProductCategory.Text == ""
                 || txtProductPrice.Text == "")
@@ -78,17 +78,16 @@ namespace Biomarkt_GmbH
                 return;
             }
 
-            // save product name in database
-            string productName = txtProductName.Text;
-            string productBrand = txtProductBrand.Text;
-            string productCategory = comboBoxProductCategory.Text;
-            string productPrice = txtProductPrice.Text;
-
-            databaseConnection.Open();
-            string query = string.Format("insert into Products values('{0}','{1}','{2}','{3}')", productName, productBrand, productCategory, productPrice);
-            SqlCommand sqlCommand = new SqlCommand(query, databaseConnection);
-            sqlCommand.ExecuteNonQuery();
-            databaseConnection.Close();
+            string query = "INSERT INTO Products (Name, Brand, Category, Price) " +
+               "VALUES (@Name, @Brand, @Category, @Price)";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Name", txtProductName.Text },
+                { "@Brand", txtProductBrand.Text },
+                { "@Category", comboBoxProductCategory.Text },
+                { "@Price", txtProductPrice.Text }
+            };
+            ExecuteQuery(query, parameters);
 
             ClearAllFields();
             ShowProducts();
@@ -96,13 +95,43 @@ namespace Biomarkt_GmbH
 
         private void BtnProductEdit_Click(object sender, EventArgs e)
         {
+            if (lastSelectedProductKey == 0)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Pordukt aus.");
+                return;
+            }
 
+            string query = @"UPDATE Products SET Name = @Name, Brand = @Brand, Category = @Category, Price = @Price WHERE Id = @Id";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Name", txtProductName.Text },
+                { "@Brand", txtProductBrand.Text },
+                { "@Category", comboBoxProductCategory.Text },
+                { "@Price", txtProductPrice.Text },
+                { "@Id", lastSelectedProductKey }
+            };
+
+            ExecuteQuery(query, parameters);           
             ShowProducts();
         }
 
         private void BtnProductDelete_Click(object sender, EventArgs e)
         {
+            if(lastSelectedProductKey == 0)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Pordukt aus.");
+                return;
+            }
+            string query = "DELETE FROM Products WHERE Id = @Id";
 
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Id", lastSelectedProductKey }
+            };
+
+            ExecuteQuery(query, parameters);
+            ClearAllFields();
             ShowProducts();
         }
 
@@ -118,6 +147,34 @@ namespace Biomarkt_GmbH
             txtProductPrice.Text = "";
             comboBoxProductCategory.Text = "";
             comboBoxProductCategory.SelectedItem = null;
+        }
+
+        private void ProductsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtProductName.Text = productsC.SelectedRows[0].Cells[1].Value.ToString();
+            txtProductBrand.Text = productsC.SelectedRows[0].Cells[2].Value.ToString();
+            comboBoxProductCategory.Text = productsC.SelectedRows[0].Cells[3].Value.ToString();
+            txtProductPrice.Text = productsC.SelectedRows[0].Cells[4].Value.ToString();
+
+            lastSelectedProductKey = (int)productsC.SelectedRows[0].Cells[0].Value;            
+        }
+
+        private void ExecuteQuery(string query, Dictionary<string, object> parameters = null)
+        {
+            using (SqlCommand cmd = new SqlCommand(query, databaseConnection))
+            {
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                    }
+                }
+
+                databaseConnection.Open();
+                cmd.ExecuteNonQuery();
+                databaseConnection.Close();
+            }
         }
     }
 }

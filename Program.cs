@@ -11,9 +11,10 @@ namespace Biomarkt_GmbH
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new LoadingScreen());
+            Application.Run(new LoadingScreen());
             //Application.Run(new MainMenuScreen());
-            Application.Run(new ProductsScreen());
+            //Application.Run(new InvoiceScreen());
+            //Application.Run(new ProductsScreen());
         }
     }
 }
